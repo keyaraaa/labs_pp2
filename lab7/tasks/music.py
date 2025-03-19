@@ -15,17 +15,18 @@ screen = pygame.display.set_mode((800, 800))
 pygame.display.set_caption("player")
 clock = pygame.time.Clock()
 
-background = pygame.image.load(os.path.join("musical-elements", "background1.jpg"))
+background_path = "/Users/keyara/Desktop/my_project/labs/lab7/musical-elements/background1.jpg"
+background = pygame.image.load(background_path)
 
 bg = pygame.Surface((500, 200))
 bg.fill((255, 255, 255))
 
 font2 = pygame.font.SysFont(None, 20)
 
-playb = pygame.image.load(os.path.join("musical-elements", "play.png"))
-pausb = pygame.image.load(os.path.join("musical-elements", "pause.png"))
-nextb = pygame.image.load(os.path.join("musical-elements", "next.png"))
-prevb = pygame.image.load(os.path.join("musical-elements", "back.png"))
+playb = pygame.image.load(os.path.join("labs/lab7/musical-elements/play.png"))
+pausb = pygame.image.load(os.path.join("labs/lab7/musical-elements/pause.png"))
+nextb = pygame.image.load(os.path.join("labs/lab7/musical-elements/next.png"))
+prevb = pygame.image.load(os.path.join("labs/lab7/musical-elements/back.png"))
 
 index = 0
 aplay = False
