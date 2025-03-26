@@ -36,9 +36,7 @@ while run:
     if ey > H: ey, ex = -100, random.randint(50, W - 50)
     if cy > H: cy, cx = -100, random.randint(50, W - 50)
 
-    # 💥 Столкновение с врагом
     if pygame.Rect(px, py, 50, 100).colliderect(pygame.Rect(ex, ey, 50, 100)):
-        # Показать Game Over и счёт
         game_over_text = font.render("GAME OVER", True, (255, 0, 0))
         score_text = font.render(f"Coins collected: {score}", True, (255, 255, 255))
         sc.blit(game_over_text, (W // 2 - game_over_text.get_width() // 2, H // 2 - 30))
@@ -47,12 +45,10 @@ while run:
         pygame.time.delay(2500)
         run = False
 
-    # 💰 Подбор монеты
     if pygame.Rect(px, py, 50, 100).colliderect(pygame.Rect(cx, cy, 30, 30)):
         score += 1
         cy, cx = -100, random.randint(50, W - 50)
 
-    # Отрисовка
     sc.blit(player, (px, py))
     sc.blit(enemy, (ex, ey))
     sc.blit(coin, (cx, cy))
